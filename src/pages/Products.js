@@ -36,6 +36,7 @@ export default function Products({ location }) {
 
   return (
     <div>
+      <span class="snipcart-items-count"></span>
       <div>Products List!</div>
       {data.prices.edges.map(node => (
         <div key={node.node.id}>
@@ -49,15 +50,16 @@ export default function Products({ location }) {
             />
           </div>
           <button
-          class = "snipcart-add-item"
-          data-item-id = {node.node.id}
-          data-item-price ={node.node.unit_amount}
-          data-item-url = "https://jamstack-snipcart.netlify.app/Products"
-          data-item-name = {node.node.product.name}
-          data-item-description = {node.node.product.description }
-          data-item-image = {node.node.product.images[0]}
+            class="snipcart-add-item"
+            data-item-id={node.node.id}
+            data-item-price={node.node.unit_amount}
+            data-item-url="https://jamstack-snipcart.netlify.app/Products"
+            data-item-name={node.node.product.name}
+            data-item-description={node.node.product.description}
+            data-item-image={node.node.product.images[0]}
           >
-          checkout</button>
+            checkout
+          </button>
         </div>
       ))}
     </div>
